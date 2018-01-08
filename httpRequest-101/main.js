@@ -10,7 +10,8 @@ function executeThisIfXHRFails() {
 function executeThisAfterFileIsLoaded() {
   // console.log("myRequest", myRequest);
   console.log("event.target", event.target);
-  var data = JSON.parse(event.target.responseText);
+  // using json.parse turns the json data into a JS object. so 'data' here is an object
+  var data = JSON.parse(event.target.responseText); // can also use 'this.responseText'
   console.log("data", data);
   outputSongs(data.songs);
 }
@@ -37,3 +38,5 @@ function outputSongs(songsArr) {
 }
 
 console.log("Last Line in JS file", Date.now());
+
+
